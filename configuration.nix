@@ -18,6 +18,8 @@
     options = "--delete-older-than 14d";
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -117,6 +119,8 @@
   # };
 
   programs.git.enable = true;
+
+  programs.steam.enable = true;
 
   # List services that you want to enable:
 
