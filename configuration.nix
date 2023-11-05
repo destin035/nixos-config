@@ -79,6 +79,8 @@
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
+  hardware.opengl.driSupport32Bit = true;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
