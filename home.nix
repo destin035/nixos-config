@@ -10,6 +10,7 @@
     ripgrep
     unzip
     gcc
+    telegram-desktop
     microsoft-edge
     (python311.withPackages (ps: with ps; [ pip setuptools virtualenv ]))
   ];
