@@ -53,6 +53,9 @@
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
 
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+
   fonts.fonts = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
