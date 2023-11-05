@@ -48,6 +48,14 @@
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
 
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-emoji
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
