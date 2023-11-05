@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     ripgrep
+    unzip
     gcc
     microsoft-edge
     (python311.withPackages (ps: with ps; [ pip setuptools virtualenv ]))
