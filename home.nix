@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     ripgrep
     microsoft-edge
+    (python311.withPackages (ps: with ps; [ pip setuptools virtualenv ]))
   ];
 
   programs.neovim.enable = true;
