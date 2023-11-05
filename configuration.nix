@@ -25,7 +25,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable booting into a crashDump kernel when my system panics/hangs
-  boot.crashDump.enable = true;
+  # requires kernel recompile
+  # boot.crashDump.enable = true;
 
   # Enable in-memory compressed devices and swap space provided by the zram kernel module.
   zramSwap.enable = true;
