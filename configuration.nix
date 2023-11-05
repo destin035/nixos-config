@@ -24,6 +24,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   # Enable booting into a crashDump kernel when my system panics/hangs
   # requires kernel recompile
   # boot.crashDump.enable = true;
@@ -109,8 +111,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
+    file
     wget
+    ethtool
     pciutils
     usbutils
   ];
