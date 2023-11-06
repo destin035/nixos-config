@@ -1,16 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.auto-optimise-store = true;
   nix.gc = {
     automatic = true;
@@ -36,7 +37,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -54,7 +55,7 @@
   # };
 
   i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+  i18n.inputMethod.fcitx5.addons = with pkgs; [fcitx5-chinese-addons];
 
   fonts.fonts = with pkgs; [
     noto-fonts
@@ -66,13 +67,11 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
-
+  services.xserver.excludePackages = [pkgs.xterm];
 
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -102,7 +101,7 @@
   users.users.destin = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$qN6F1ck4T1/d.BMhiU9Ql.$H8sl6GkbdwxiO1c4iQ7suRJ8JkUInD0IInbQxI4W4u9";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       tree
@@ -157,6 +156,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
-

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "destin";
@@ -12,7 +14,7 @@
     gcc
     telegram-desktop
     microsoft-edge
-    (python311.withPackages (ps: with ps; [ pip setuptools virtualenv ]))
+    (python311.withPackages (ps: with ps; [pip setuptools virtualenv]))
   ];
 
   programs.neovim.enable = true;
