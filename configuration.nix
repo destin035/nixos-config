@@ -65,6 +65,14 @@
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
+  fonts.fontconfig.defaultFonts = {
+    serif = ["Noto Serif CJK SC"];
+    sansSerif = ["Noto Sans CJK SC"];
+    monospace = ["JetBrainsMono Nerd Font" "Noto Sans Mono CJK SC"];
+  };
+
+  fonts.fontDir.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
