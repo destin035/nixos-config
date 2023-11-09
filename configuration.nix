@@ -27,6 +27,8 @@
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  boot.tmp.useTmpfs = true;
+
   # Enable booting into a crashDump kernel when my system panics/hangs
   # requires kernel recompile
   # boot.crashDump.enable = true;
